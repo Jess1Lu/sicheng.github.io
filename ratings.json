@@ -1,0 +1,26 @@
+[
+  {
+    "attractiveness": 5,
+    "competence": 3,
+    "education": 4,
+    "intelligence": 4,
+    "likability": 3,
+    "wealth": 4,
+    "trustworthiness": 5,
+    "timestamp": "2025-04-17T11:45:15.846Z",
+    "user": null,
+    "questionNumber": 0
+  },
+  {
+    "attractiveness": 5,
+    "competence": 4,
+    "education": 5,
+    "intelligence": 4,
+    "likability": 4,
+    "wealth": 4,
+    "trustworthiness": 5,
+    "timestamp": "2025-04-17T14:21:09.622Z",
+    "user": null,
+    "questionNumber": 0
+  }
+]

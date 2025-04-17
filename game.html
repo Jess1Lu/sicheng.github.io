@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>语言探索家</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- 中国地图展示区域 -->
+        <div class="map-container">
+            <div class="map-header">
+                <div class="avatar-section">
+                    <div class="avatar-container">
+                        <img src="assets/123.png" alt="Speaker Avatar" id="speakerAvatar" class="avatar-image">
+                    </div>
+                </div>
+                <button id="playAudio" class="play-button">
+                    <span class="play-icon">▶</span>
+                </button>
+                <div class="map-title">聆听音频，你认为说话者出自哪个省份？</div>
+            </div>
+            <audio id="currentAudio" style="display: none;"></audio>
+            <img src="assets/map-of-china.jpg" alt="中国地图" class="map-image">
+        </div>
+
+        <!-- 省份选择区域 -->
+        <div class="province-selection">
+            <div class="selection-title">请选择说话者所在的省份：</div>
+            <div class="provinces-grid">
+                <!-- 直辖市 -->
+                <label class="province-option">
+                    <input type="radio" name="province" value="beijing">
+                    <span>北京市</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="tianjin">
+                    <span>天津市</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="shanghai">
+                    <span>上海市</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="chongqing">
+                    <span>重庆市</span>
+                </label>
+
+                <!-- 省份 -->
+                <label class="province-option">
+                    <input type="radio" name="province" value="hebei">
+                    <span>河北省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="shanxi">
+                    <span>山西省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="liaoning">
+                    <span>辽宁省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="jilin">
+                    <span>吉林省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="heilongjiang">
+                    <span>黑龙江省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="jiangsu">
+                    <span>江苏省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="zhejiang">
+                    <span>浙江省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="anhui">
+                    <span>安徽省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="fujian">
+                    <span>福建省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="jiangxi">
+                    <span>江西省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="shandong">
+                    <span>山东省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="henan">
+                    <span>河南省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="hubei">
+                    <span>湖北省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="hunan">
+                    <span>湖南省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="guangdong">
+                    <span>广东省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="hainan">
+                    <span>海南省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="sichuan">
+                    <span>四川省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="guizhou">
+                    <span>贵州省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="yunnan">
+                    <span>云南省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="shaanxi">
+                    <span>陕西省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="gansu">
+                    <span>甘肃省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="qinghai">
+                    <span>青海省</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="taiwan">
+                    <span>台湾省</span>
+                </label>
+
+                <!-- 自治区 -->
+                <label class="province-option">
+                    <input type="radio" name="province" value="inner_mongolia">
+                    <span>内蒙古自治区</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="guangxi">
+                    <span>广西壮族自治区</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="tibet">
+                    <span>西藏自治区</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="ningxia">
+                    <span>宁夏回族自治区</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="xinjiang">
+                    <span>新疆维吾尔自治区</span>
+                </label>
+
+                <!-- 特别行政区 -->
+                <label class="province-option">
+                    <input type="radio" name="province" value="hongkong">
+                    <span>香港特别行政区</span>
+                </label>
+                <label class="province-option">
+                    <input type="radio" name="province" value="macau">
+                    <span>澳门特别行政区</span>
+                </label>
+            </div>
+            <button id="submitAnswer" class="submit-btn">提交答案</button>
+        </div>
+
+        <!-- 统计信息弹窗 -->
+        <div id="statsModal" class="modal">
+            <div class="modal-content">
+                <div class="stats-container">
+                    <h3>答题统计</h3>
+                    <div class="stats-item">
+                        <span>当前得分：</span>
+                        <span id="currentScore">0</span>
+                    </div>
+                    <div class="stats-item">
+                        <span>正确率：</span>
+                        <span id="accuracyRate">0%</span>
+                    </div>
+                    <div class="stats-item">
+                        <span>排名：</span>
+                        <span id="accuracyRank">--</span>
+                        <span>/</span>
+                        <span id="totalPlayers">--</span>
+                    </div>
+                    <div class="stats-item">
+                        <span>当前在线：</span>
+                        <span id="onlinePlayers">--</span>
+                        <span>人</span>
+                    </div>
+                    <button id="closeStats" class="close-btn">进入评分</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 评分弹窗 -->
+        <div id="ratingModal" class="modal">
+            <div class="modal-content">
+                <div class="rating-container">
+                    <h3>语音评分</h3>
+                    <div class="rating-trait">
+                        <span>吸引力</span>
+                        <div class="rating" data-trait="attractiveness">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                    </div>
+                    <div class="rating-trait">
+                        <span>能力</span>
+                        <div class="rating" data-trait="competence">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                    </div>
+                    <div class="rating-trait">
+                        <span>教育程度</span>
+                        <div class="rating" data-trait="education">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                    </div>
+                    <div class="rating-trait">
+                        <span>智力</span>
+                        <div class="rating" data-trait="intelligence">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                    </div>
+                    <div class="rating-trait">
+                        <span>亲和力</span>
+                        <div class="rating" data-trait="likability">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                    </div>
+                    <div class="rating-trait">
+                        <span>财富</span>
+                        <div class="rating" data-trait="wealth">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                    </div>
+                    <div class="rating-trait">
+                        <span>可信度</span>
+                        <div class="rating" data-trait="trustworthiness">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                    </div>
+                    <button id="submitRating" class="submit-btn">提交评分</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 感谢页面 -->
+        <div id="thankYouModal" class="modal">
+            <div class="modal-content">
+                <h2>感谢参加调查！</h2>
+                <div class="thank-you-image">
+                    <img src="assets/Happy Loop Sticker by bunny_is_moving.gif" alt="Happy Loop Sticker">
+                </div>
+                <button class="close-btn" onclick="closeThankYouModal()">关闭</button>
+            </div>
+        </div>
+
+        <!-- 音频播放器 -->
+        <audio id="audioPlayer" style="display: none;"></audio>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html> 
