@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 | 注册</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="welcome-title">欢迎来到语音识别游戏！</h1>
+        <div class="buttons-container">
+            <button id="loginBtn" class="action-btn">登录</button>
+            <button id="registerBtn" class="action-btn">注册</button>
+        </div>
+        <div class="bottom-image">
+            <img src="assets/Loop Running Sticker by bunny_is_moving.gif" alt="Loop Running Sticker">
+        </div>
+    </div>
+
+    <!-- 登录弹窗 -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="form-container">
+                <div class="form-box">
+                    <h2 class="form-title">登录</h2>
+                    <form id="login" class="input-group">
+                        <div class="input-field">
+                            <label for="loginUsername">用户名</label>
+                            <input type="text" id="loginUsername" class="input-box" name="username" placeholder="用户名" autocomplete="username" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="loginPassword">密码</label>
+                            <input type="password" id="loginPassword" class="input-box" name="password" placeholder="密码" autocomplete="current-password" required>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox" name="remember" autocomplete="off"> 记住我</label>
+                            <a href="#">忘记密码？</a>
+                        </div>
+                        <button type="submit" class="submit-btn">登录</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 注册弹窗 -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="form-container">
+                <div class="form-box">
+                    <h2 class="form-title">注册</h2>
+                    <form id="register" class="input-group">
+                        <div class="input-field">
+                            <label for="registerUsername">用户名</label>
+                            <input type="text" id="registerUsername" class="input-box" name="username" placeholder="用户名" autocomplete="username" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="registerName">姓名</label>
+                            <input type="text" id="registerName" class="input-box" name="name" placeholder="姓名" autocomplete="name" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="registerBirthplace">出生地</label>
+                            <input type="text" id="registerBirthplace" class="input-box" name="birthplace" placeholder="出生地" autocomplete="off" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="registerAge">年龄</label>
+                            <input type="number" id="registerAge" class="input-box" name="age" placeholder="年龄" min="1" max="120" autocomplete="off" required>
+                        </div>
+                        <div class="input-field">
+                            <label class="label-text">性别</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="male" autocomplete="off" required>
+                                    <span>男</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="female" autocomplete="off">
+                                    <span>女</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="gender" value="other" autocomplete="off">
+                                    <span>其他</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label class="label-text">语言</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="languages" value="chinese" autocomplete="off">
+                                    <span>中文</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="languages" value="english" autocomplete="off">
+                                    <span>英语</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="languages" value="japanese" autocomplete="off">
+                                    <span>日语</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="languages" value="korean" autocomplete="off">
+                                    <span>韩语</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="languages" value="french" autocomplete="off">
+                                    <span>法语</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="languages" value="german" autocomplete="off">
+                                    <span>德语</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <label for="registerEmail">电子邮箱</label>
+                            <input type="email" id="registerEmail" class="input-box" name="email" placeholder="电子邮箱" autocomplete="email" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="registerPassword">密码</label>
+                            <input type="password" id="registerPassword" class="input-box" name="password" placeholder="密码" autocomplete="new-password" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="registerConfirmPassword">确认密码</label>
+                            <input type="password" id="registerConfirmPassword" class="input-box" name="confirmPassword" placeholder="确认密码" autocomplete="new-password" required>
+                        </div>
+                        <button type="submit" class="submit-btn">注册</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-intro-modal" id="gameIntroModal">
+        <div class="game-intro-content">
+            <h1 class="game-title">🌍 语言探索家 🗣️</h1>
+            <p class="game-description">
+                欢迎来到这个有趣的语言猜谜游戏！<br>
+                准备好开始一段奇妙的语言之旅了吗？<br>
+                聆听说话者的声音，猜测他们来自哪里！<br>
+            </p>
+            <button class="start-game-btn" onclick="startGame()">开始探索！</button>
+        </div>
+    </div>
+
+    <!-- 音频播放器 -->
+    <audio id="audioPlayer" style="display: none;"></audio>
+
+    <!-- 评分弹窗 -->
+    <div id="ratingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>请对以下特质进行评分</h2>
+            <div class="rating-container">
+                <!-- 评分项 -->
+                <div class="rating-item" data-trait="attractiveness">
+                    <span>吸引力</span>
+                    <div class="stars">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                </div>
+                <!-- 其他评分项... -->
+            </div>
+            <button id="submitRatingBtn" class="submit-btn">提交评分</button>
+        </div>
+    </div>
+
+    <!-- 感谢页面 -->
+    <div id="thankYouModal" class="modal">
+        <div class="modal-content">
+            <h2>感谢参加调查！</h2>
+            <div class="thank-you-image">
+                <img src="assets/Happy Loop Sticker by bunny_is_moving.gif" alt="Happy Loop Sticker">
+            </div>
+            <button class="close-btn" onclick="closeThankYouModal()">关闭</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
